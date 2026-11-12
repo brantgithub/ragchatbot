@@ -151,6 +151,7 @@ def main():
     st.set_page_config(page_title="SEC Filing Q&A Chatbot", page_icon="📈")
     st.title("📈 Microsoft 2026 Annual Report Q&A Chatbot")
     st.caption("Ask questions about Microsoft's 2026 annual financial report in the knowledge base. Answers come only from those documents.")
+    st.caption("Each session has a limit of 5 questions to avoid over-incurring API costs")
     st.caption(DISCLAIMER)
 
     # API key: Streamlit secrets (when deployed) or environment variable (locally)
