@@ -26,7 +26,7 @@ CHUNK_SIZE = 1500      # characters per chunk
 CHUNK_OVERLAP = 300    # characters shared between neighbouring chunks
 TOP_K = 6              # chunks retrieved per question
 MAX_HISTORY = 6        # past messages sent back for follow-up questions
-MAX_QUESTIONS_PER_SESSION = 20   # protects your API bill on a public demo
+MAX_QUESTIONS_PER_SESSION = 5   # protects your API bill on a public demo
 
 DOCS_DIR = Path("docs")   # folder (next to app.py) that holds your PDFs
 DOC_TYPES = {".pdf", ".txt", ".md"}
