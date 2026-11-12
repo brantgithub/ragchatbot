@@ -1,0 +1,4 @@
+anthropic
+chromadb
+sentence-transformers
+pypdf

@@ -149,8 +149,8 @@ def show_sources(passages):
 
 def main():
     st.set_page_config(page_title="SEC Filing Q&A Chatbot", page_icon="📈")
-    st.title("📈 SEC Filing Q&A Chatbot")
-    st.caption("Ask questions about the filings in the knowledge base. Answers come only from those documents.")
+    st.title("📈 Microsoft 2026 Annual Report Q&A Chatbot")
+    st.caption("Ask questions about Microsoft's 2026 annual financial report in the knowledge base. Answers come only from those documents.")
     st.caption(DISCLAIMER)
 
     # API key: Streamlit secrets (when deployed) or environment variable (locally)
@@ -178,21 +178,14 @@ def main():
     # ---- Sidebar: add documents ----
     with st.sidebar:
         st.header("Documents")
-        files = st.file_uploader(
-            "Add more PDF or text files", type=["pdf", "txt", "md"], accept_multiple_files=True
-        )
-        if st.button("Add to knowledge base", disabled=not files):
-            with st.spinner("Reading and indexing..."):
-                for f in files:
-                    st.success(f"{f.name}: {ingest(collection, f.name, f.getvalue())} chunks")
-        st.caption(f"Chunks stored: {collection.count()}")
+        st.caption("Microsoft 2026 Annual Financial Report from U.S. Securities and Exchange Commission")
         st.divider()
         st.subheader("Try asking")
         st.markdown(
             "- What are the main risk factors?\n"
             "- What were total revenues, and how did they change from the prior year?\n"
             "- What business segments does the company report?\n"
-            "- What does the filing say about competition?"
+            "- What does the annual report say about competition?"
         )
 
     # ---- Chat state ----
