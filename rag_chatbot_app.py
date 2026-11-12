@@ -170,7 +170,7 @@ def main():
     # ---- Index any new files from the docs/ folder (first run only) ----
     todo = pending_docs(collection)
     if todo:
-        with st.spinner("Indexing documents from the docs/ folder. First run only, this can take a few minutes..."):
+        with st.spinner("Getting the knowledge base ready. This only happens on first start and can take a few minutes..."):
             for path in todo:
                 ingest(collection, path.name, path.read_bytes())
     if collection.count() == 0:
@@ -214,7 +214,8 @@ def main():
         st.markdown(question)
 
     past = [{"role": m["role"], "content": m["content"]} for m in st.session_state.messages]
-    passages = retrieve(collection, question)
+    with st.spinner("Searching the filing for the most relevant information..."):
+        passages = retrieve(collection, question)
 
     with st.chat_message("assistant"):
         if not passages:
